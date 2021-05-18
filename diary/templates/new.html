@@ -1,0 +1,10 @@
+<h1>새 일기 작성하기</h1>
+
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%}
+    <p>제목: <input type='text' name = 'title'></p>
+    본문: <textarea name='body' id="" cols="30" rows="10"></textarea>
+    <button type = 'submit'>submit</button>
+</form>
+<br>
+<a href="{% url 'index' %}">목차로 돌아가기</a>

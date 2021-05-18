@@ -1,0 +1,10 @@
+<h1>일기를 수정하세요</h1>
+
+<form action="{%url 'update' diary.id %}" method="post">
+    {%csrf_token%}
+    <p>제목: <input type="text" name = "title" value = "{{diary.title}}"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10">{{diary.body}}</textarea>
+    <button type = "submit">submit</button>
+</form>
+<br>
+<a href="{% url 'detail' diary.id %}">취소</a>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+</head>
+<body>
+    <h1>{{diary.title}}</h1>
+    <div>
+    <p>{{diary.body}}</p>
+    </div>
+    <br>
+    <a href="{% url 'edit' diary.id %}">수정하기</a>
+    <a href="{% url 'delete' diary.id %}">삭제하기</a>
+    <br>
+    <a href="{% url 'index' %}">목차로 돌아가기</a>
+</body>
+</html>
