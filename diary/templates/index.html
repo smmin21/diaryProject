@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>목차</h1>
-    <a href="{% url 'new' %}"><button>일기 쓰기</button></a>
-    <div class="container">
-        {% for diary in diarys%}
-        <div>
-            <a href = "{%url 'detail' diary.id %}">* 제목 : {{diary.title}}</a>
-        </div>
-        {% endfor %}
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>목차</h1>
+<a href="{% url 'new' %}"><button>일기 쓰기</button></a>
+<div class="container">
+    {% for diary in diarys%}
+    <div>
+        <a href = "{%url 'detail' diary.id %}">* 제목 : {{diary.title}}</a>
     </div>
-    <br>
-    <a href="{% url 'home' %}">일기장 커버로 돌아가기</a>
-</body>
-</html>
+    {% endfor %}
+</div>
+<br>
+<a href="{% url 'home' %}">일기장 커버로 돌아가기</a>
+
+{% endblock %}

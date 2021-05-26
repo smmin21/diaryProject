@@ -1,0 +1,10 @@
+<h1>Login</h1>
+
+<a href="{% url 'home' %}">홈화면으로</a>
+<form action="{% url 'login' %}" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">로그인</button>
+</form>
+<br>
+<a href="{% url 'signup' %}">회원가입</a>

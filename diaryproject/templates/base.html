@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyDiary</title>
+    <style>
+        body{text-align: center}
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="bgImage"></div>
+	<style>
+        .bgImage {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: center / cover no-repeat url('/static/images.png');
+          opacity: 0.5;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    </style>
+    {% if user.is_authenticated %}
+    <h1>2021년 나의 일기장</h1>
+    <h4>{{user.username}}님 안녕하세요!</h4>
+    <a href="{% url 'logout' %}">로그아웃</a>
+    {% endif %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
